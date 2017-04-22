@@ -14,11 +14,3 @@ predictions = lem2.predict(X_test)
 
 ## Example
 ...
-
-## Included example datasets
-* Car Evaluation Dataset: https://archive.ics.uci.edu/ml/datasets/Car+Evaluation
-* Lenses Dataset: https://archive.ics.uci.edu/ml/datasets/Lenses
-* Play Tennis Dataset
-* Soybean (Small) Dataset: https://archive.ics.uci.edu/ml/datasets/Soybean+(Small)
-* Tic-Tac-Toe Endgame Dataset: https://archive.ics.uci.edu/ml/datasets/Tic-Tac-Toe+Endgame
-* Zoo Dataset: https://archive.ics.uci.edu/ml/datasets/Zoo
