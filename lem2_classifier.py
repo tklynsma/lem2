@@ -6,6 +6,10 @@ class LEM2Classifier:
         """
         Learn the decision rules from the given training set (data, y) using
         the LEM2 rule induction algorithm.
+
+        Args:
+            data ([[str]]): the list of instances/objects in the dataset.
+            y ([str]): the list of decision values for each instance.
         """
         self._U = [tuple(x) for x in data] # The universe of objects/instances.
         self._A = range(len(data[0]))      # The list of attribute indices.
@@ -35,6 +39,12 @@ class LEM2Classifier:
     def print_rules(self, attr_names=None, class_name='d', min_acc=0, min_cov=0):
         """
         Print the decision rules to console.
+
+        Args:
+            attr_names ([str]): the list of attribute names.
+            class_name (str): the name of the decision value.
+            min_acc (int): the minimum accuracy of printed rules (default 0).
+            min_cov (int): the minimum coverage of printed rules (default 0).
         """
         for (acc, cov, conditions, decision) in self._rules:
             if acc * 100 >= min_acc and cov * 100 >= min_cov:
@@ -50,6 +60,12 @@ class LEM2Classifier:
     def predict(self, X, method='lers'):
         """
         Return a list of predictions for the instances in X.
+
+        Args:
+            X ([[str]]): the list of instances/objects to be predicted.
+            method (str): the classification method (lers or first_fit).
+        Returns:
+            [str]: the list of predictions.
         """
         if method == 'first_fit':
             return [self._first_fit(x) for x in X]
