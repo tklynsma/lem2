@@ -13,11 +13,11 @@ predictions = lem2.predict(X_test)
 ```
 
 ## Example
-LEM2 requires a data set containing only categorical attributes and decision values labeled by an expert. One such dataset is the well-known playtennis dataset (included in examples). First, load the data and separate the attribute values from the decision values:
+LEM2 requires a dataset containing only categorical attributes and labeled decision values. One such dataset is the well-known playtennis dataset (included in example/). First, load the data and separate the attribute values from the decision values:
 
 ```python
 >>> import numpy as np
->>> data = np.loadtxt("examples/playtennis.data", dtype='str', delimiter=',')
+>>> data = np.loadtxt("example/playtennis.data", dtype='str', delimiter=',')
 >>> X, y = data[:,0:-1], data[:,len(data[0])-1]
 ```
 
@@ -34,4 +34,12 @@ Rule: (play tennis, no) <- (outlook, sunny), (humidity, high) [Acc. 100.0, Cov. 
 Rule: (play tennis, yes) <- (outlook, rain), (wind, weak) [Acc. 100.0, Cov. 21.4]
 Rule: (play tennis, yes) <- (outlook, sunny), (humidity, normal) [Acc. 100.0, Cov. 14.3]
 Rule: (play tennis, no) <- (outlook, rain), (wind, strong) [Acc. 100.0, Cov. 14.3]
+```
+
+The function ```print_rules``` will print the induced rules by LEM2 in a readable form, optionally supplied with attribute names, a class name, a minimum accuracy value and a minimum coverage value. The induced rules can be used for classifying new instances:
+
+```
+>>> prediction = lem2.predict([["sunny","mild","normal","strong"]])
+>>> print prediction[0]
+yes
 ```
