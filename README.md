@@ -36,7 +36,7 @@ Rule: (play tennis, yes) <- (outlook, sunny), (humidity, normal) [Acc. 100.0, Co
 Rule: (play tennis, no) <- (outlook, rain), (wind, strong) [Acc. 100.0, Cov. 14.3]
 ```
 
-The function ```print_rules``` will print the induced rules by LEM2 in a readable form, optionally supplied with attribute names, a class name, a minimum accuracy value and a minimum coverage value. The induced rules can be used for classifying new instances:
+The function ```print_rules``` will print the induced rules by LEM2 in a readable form, optionally supplied with attribute names, a class name, a minimum accuracy value and a minimum coverage value. After fitting the data the induced rules can be used for classifying new instances:
 
 ```
 >>> prediction = lem2.predict([["sunny","mild","normal","strong"]])
