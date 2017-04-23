@@ -110,7 +110,7 @@ class LEM2Classifier:
             return max(c_matching, key=lambda k: self._support(c_matching[k]))
             
         # If there exists at least one partially matching rule return the decision
-#       # value d for which its matching rule set has the highest support.
+        # value d for which its matching rule set has the highest support.
         elif partial_matching:
             return max(p_matching, key=lambda k: self._support(p_matching[k], case=x))
             
