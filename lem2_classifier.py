@@ -62,15 +62,22 @@ class LEM2Classifier:
         Return a list of predictions for the instances in X.
 
         Args:
-            X ([[str]]): the list of instances/objects to be predicted.
+            X ([str] or [[str]]): one instance or a list of instances/objects to be predicted.
             method (str): the classification method (lers or first_fit).
         Returns:
-            [str]: the list of predictions.
+            str or [str]: the prediction or list of predictions.
         """
-        if method == 'first_fit':
-            return [self._first_fit(x) for x in X]
-        elif method == 'lers':
-            return [self._lers_classification(x) for x in X]
+        if not type(X[0]) is list:
+            if method == 'first_fit':
+                return self._first_fit(X)
+            elif method == 'lers':
+                return self._lers_classification(X)
+
+        else:
+            if method == 'first_fit':
+                return [self._first_fit(x) for x in X]
+            elif method == 'lers':
+                return [self._lers_classification(x) for x in X]
             
         print "Invalid classification method."
         return []
