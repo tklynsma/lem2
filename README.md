@@ -13,4 +13,4 @@ predictions = lem2.predict(X_test)
 ```
 
 ## Example
-...
+LEM2 is a supervised learning algorithm and requires a data set containing only categorical attributes and decision values labeled by an expert. One such dataset is the Tic-Tac-Toe Endgame Dataset found [here](https://archive.ics.uci.edu/ml/datasets/Tic-Tac-Toe+Endgame).
