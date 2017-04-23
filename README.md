@@ -13,7 +13,7 @@ predictions = lem2.predict(X_test)
 ```
 
 ## Example
-LEM2 requires a data set containing only categorical attributes and decision values labeled by an expert. One such dataset is the Tic-Tac-Toe Endgame Dataset found [here](https://archive.ics.uci.edu/ml/datasets/Tic-Tac-Toe+Endgame). First, load the data:
+LEM2 requires a data set containing only categorical attributes and decision values labeled by an expert. One such dataset is the Tic-Tac-Toe Endgame Dataset found [here](https://archive.ics.uci.edu/ml/datasets/Tic-Tac-Toe+Endgame). First, load the data and separate the attribute values from the decision values:
 
 ```python
 >>> import numpy as np
@@ -21,7 +21,7 @@ LEM2 requires a data set containing only categorical attributes and decision val
 >>> X, y = data[:,0:-1], data[:,len(data[0])-1]
 ```
 
-Next, fit the data:
+Next, fit the data using the LEM2 classifier:
 
 ```python
 >>> from lem2_classifier import LEM2Classifier
